@@ -1,0 +1,13 @@
+<div class="col-md-6">
+  <div class="thumbnail">
+    <a style="cursor: pointer"
+       [routerLink]="['/'+picture.id]"
+        routerLinkActive="active">
+      <img [src]="picture.imagePath" alt="Lights" style="width:100%">
+      <div class="caption">
+        <p>{{ picture.comment }}</p>
+        <p align="right">{{ picture.postedAt }}</p>
+      </div>
+    </a>
+  </div>
+</div>

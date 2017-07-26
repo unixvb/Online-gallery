@@ -1,0 +1,30 @@
+<div class="row">
+    <form [formGroup]="pictureForm" (ngSubmit)="onSaveChanges()">
+        <div class="col-xs-12">
+            <img [src]="picture.imagePath" alt="Lights" style="width:100%">
+        </div>
+        <div class="col-xs-12">
+            <div class="caption">
+                <br>
+                <div class="form-group">
+                    <label for="comment">Comment:</label>
+                    <textarea
+                            type="text"
+                            class="form-control"
+                            id="comment"
+                            rows="2"
+                            maxlength="200"
+                            comment
+                            formControlName="comment"></textarea>
+                </div>
+                <button
+                        class="btn btn-info"
+                        type="submit">Save</button>
+                <p align="right">{{ picture.postedAt }}</p>
+            </div>
+        </div>
+    </form>
+    <button
+            class="btn btn-danger pull-right"
+            (click)="onDelete()">Delete</button>
+</div>

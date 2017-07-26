@@ -1,0 +1,42 @@
+<div class="row">
+  <form (ngSubmit)="onAddItem(f)" #f="ngForm">
+  <div class="col-xs-12">
+    <image-upload
+            [max]="1"
+            [headers]="[
+              {header: 'Authorization', value: 'MyToken'}
+            ]"
+            [buttonCaption]="'Select Image!'"
+            [dropBoxMessage]="'Drop your image here!'"
+            [extensions]="['jpg','png']"
+            [maxFileSize]="1048576"
+            (onFileUploadFinish)="imageUploaded($event)"
+            (onRemove)="imageRemoved($event)"
+            (isPending)="disableSendButton($event)"
+            name="picture"
+            required
+    ></image-upload>
+  </div>
+  <div class="col-xs-12">
+    <div class="caption">
+      <br>
+      <div class="form-group">
+        <label for="comment">Comment:</label>
+        <textarea
+                class="form-control"
+                rows="2"
+                id="comment"
+                name="comment"
+                maxlength="200"
+                comment
+                ngModel
+        ></textarea>
+      </div>
+    </div>
+  </div>
+    <button
+            class="btn btn-success pull-right"
+            type="submit"
+            [disabled]="!f.valid">Create</button>
+  </form>
+  </div>
