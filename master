@@ -1,0 +1,8 @@
+Unstaged changes after reset:
+M	src/app/app-routing.module.ts
+M	src/app/app.module.ts
+M	src/app/pictures/pictures-detail/pictures-detail.component.ts
+M	src/app/pictures/pictures-list/picture-item/picture-item.component.ts
+M	src/app/pictures/pictures-list/pictures-list.component.ts
+M	src/app/pictures/pictures.component.html
+M	src/app/pictures/pictures.component.ts

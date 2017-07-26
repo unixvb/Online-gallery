@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params, Router} from "@angular/router";
 import {FormControl, FormGroup} from "@angular/forms";
-import {Picture} from "../../picture.model";
-import {PictureService} from "../../picture.service";
+import {Picture} from "../picture.model";
+import {PictureService} from "../picture.service";
 
 @Component({
     selector: 'app-pictures-detail',
@@ -23,11 +23,10 @@ export class PicturesDetailComponent implements OnInit {
         this.route.params.subscribe(
             (params: Params) => {
                 this.picture = this.pictureService.getPicture(+params['id']);
-                this.initForm();
-                ///need check if exits picture!!!
-                ///if(!this.picture) {
-                ///    this.router.navigate([''], {relativeTo: this.route});
-                ///}
+                if (typeof this.picture != "undefined")
+                    this.initForm();
+                else
+                    this.router.navigate(['']);
             }
         );
 
